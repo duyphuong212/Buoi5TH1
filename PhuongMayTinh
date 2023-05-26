@@ -1,0 +1,32 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package buoi5th;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class PhongMayTinh extends Phonghoc{
+    private int soMayTinh;
+    public PhongMayTinh(String maPhong, String dayNha, double dienTich, int soBongden, int soMaytinh){
+        super(maPhong, dayNha, dienTich, soBongden);
+        this.soMayTinh = soMayTinh;
+    }
+    public int getSoMayTinh(){
+        return  soMayTinh;       
+    }
+    public void getSoMayTinh(int soMayTinh){
+        this.soMayTinh = soMayTinh;
+    }
+    @Override
+    public String toString(){
+        return super.toString() + "So may tinh: " + soMayTinh;
+    }
+
+    void setSoMayTinh(int soMayTinh) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+}
