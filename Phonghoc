@@ -1,0 +1,55 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package buoi5th;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class Phonghoc {
+    private String maPhong;
+    private String dayNha;
+    private double dienTich;
+    private int soBongden;
+    
+    public Phonghoc(String maPhong, String dayNha, double dienTich, int soBongden){
+        this.maPhong = maPhong;
+        this.dayNha = dayNha;
+        this.dienTich = dienTich;
+        this.soBongden = soBongden;
+    }
+    public String getMaPhong(){
+    return maPhong;
+    }
+    public void setMaPhong(String maPhong){
+        this.maPhong = maPhong;
+    }  
+    public String getDayNha(){
+        return dayNha;
+    }
+    public void setDayNha(String dayNha){
+        this.dayNha = dayNha;
+    }
+    public double getDienTich(){
+        return dienTich;
+    }
+    public void setDienTich(double dienTich){
+        this.dienTich = dienTich;
+    }
+    public int getSoBongDen(){
+        return soBongden;
+    }
+    public void setSoBongDen(int soBongDen){
+        this.soBongden = soBongden;
+    }
+    public boolean datChuan(){
+        return soBongden >=(dienTich/10);        
+    }
+    @Override
+    public String toString(){
+        return "Phong hoc: " + maPhong + ",Day nha:" + dayNha + ", Dien Tich: " + dienTich + ",So bong den:" + soBongden;
+        
+    }
+}
