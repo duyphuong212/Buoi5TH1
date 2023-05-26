@@ -1,0 +1,99 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package buoi5th;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class QuanLyPhongHoc {
+    private List<Phonghoc> danhSachPhong;
+
+    public QuanLyPhongHoc() {
+        danhSachPhong = new ArrayList<>();
+    }
+
+    public boolean themPhong(Phonghoc phongHoc) {
+        for (Phonghoc phong : danhSachPhong) {
+            if (phong.getMaPhong().equals(phongHoc.getMaPhong())) {
+                return false; // Phòng đã tồn tại trong danh sách
+            }
+        }
+        danhSachPhong.add(phongHoc);
+        return true; // Thêm phòng thành công
+    }
+
+    public Phonghoc timKiemPhong(String maPhong) {
+        for (Phonghoc phong : danhSachPhong) {
+            if (phong.getMaPhong().equals(maPhong)) {
+                return phong;
+            }
+        }
+        return null; // Không tìm thấy phòng
+    }
+
+    public void inDanhSachPhong() {
+        for (Phonghoc phong : danhSachPhong) {
+            System.out.println(phong.toString());
+        }
+    }
+
+    public void inDanhSachPhongDatChuan() {
+        for (Phonghoc phong : danhSachPhong) {
+            if (phong.datChuan()) {
+                System.out.println(phong.toString());
+            }
+        }
+    }
+
+    public void sapXepTheoDayNhaTangDan() {
+        danhSachPhong.sort(Comparator.comparing(Phonghoc::getDayNha));
+    }
+
+    public void sapXepTheoDienTichGiamDan() {
+        danhSachPhong.sort(Comparator.comparing(Phonghoc::getDienTich).reversed());
+    }
+
+    public void sapXepTheoSoBongDenTangDan() {
+        danhSachPhong.sort(Comparator.comparing(Phonghoc::getSoBongDen));
+    }
+
+    public void capNhatSoMayTinh(String maPhong, int soMayTinh) {
+        Phonghoc phongHoc = timKiemPhong(maPhong);
+        if (phongHoc instanceof PhongMayTinh) {
+            ((PhongMayTinh) phongHoc).setSoMayTinh(soMayTinh);
+        }
+    }
+
+    public boolean xoaPhong(String maPhong) {
+        for (Phonghoc phong : danhSachPhong) {
+            if (phong.getMaPhong().equals(maPhong)) {
+                danhSachPhong.remove(phong);
+                return true; // Xóa phòng thành công
+            }
+        }
+        return false; // Không tìm thấy phòng
+    }
+
+    public int tongSoPhongHoc() {
+        return danhSachPhong.size();
+    }
+
+    public void inDanhSachPhongMay(int soMay) {
+        for (Phonghoc phong : danhSachPhong) {
+            if (phong instanceof PhongMayTinh) {
+                PhongMayTinh phongMayTinh = (PhongMayTinh) phong;
+                if (phongMayTinh.getSoMayTinh() == soMay) {
+                    System.out.println(phong.toString());
+                }
+            }
+        }
+    }
+}
+
