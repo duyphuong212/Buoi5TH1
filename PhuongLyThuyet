@@ -1,0 +1,28 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package buoi5th;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class PhongLyThuyet extends Phonghoc {
+    private boolean coMayChieu;
+    public PhongLyThuyet(String maPhong, String dayNha, double dienTich, int soBongden, boolean coMayChieu){
+        super(maPhong, dayNha, dienTich, soBongden);
+        this.coMayChieu = coMayChieu;
+    }
+    public boolean isCoMayChieu(){
+        return coMayChieu;
+    }
+    public void setCoMayChieu(boolean cMayChieu){
+        this.coMayChieu = coMayChieu;
+    }
+@Override
+    public String toString(){
+        return super.toString() + ", Co may chieu: " + coMayChieu;
+    }
+    
+}
