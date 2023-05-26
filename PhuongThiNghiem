@@ -1,0 +1,45 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package buoi5th;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class PhongThiNghiem extends Phonghoc {
+    private String chuyenNganh;
+    private int sucChua;
+    private boolean coBonRuaTay;
+    
+    public PhongThiNghiem(String maPhong, String dayNha, double dienTich, int soBongden, String chuyenNganh, int sucChua, boolean coBonRuaTay){
+        super(maPhong, dayNha, dienTich, soBongden);
+        this.chuyenNganh = chuyenNganh;
+        this.sucChua = sucChua;
+        this.coBonRuaTay = coBonRuaTay;        
+    }
+    public String getchuyenNganh(){
+        return chuyenNganh;       
+    }
+    public void setchuyenNganh(String chuyenNganh){
+        this.chuyenNganh = chuyenNganh;        
+    }
+    public int getsucChua(){
+        return sucChua;       
+    }
+    public void setsucChua(int sucChua){
+        this.sucChua = sucChua;  
+    }
+    public boolean isCoBonRuaTay(){
+        return coBonRuaTay;       
+    }
+    public void setcoBonRuaTay(boolean coBonRuaTay){
+        this.coBonRuaTay = coBonRuaTay;        
+    }
+    @Override
+    public String toString() {
+        return super.toString() + ", Chuyen nganh: " + chuyenNganh +
+                ", Suc chua: " + sucChua + ", Co bon rua tay: " + coBonRuaTay;
+    }
+}
